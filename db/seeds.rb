@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+Doctor.destroy_all
+Patient.destroy_all
+Apointment.destroy_all
+
+6.times do
+  doctor = Doctor.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, speciality: ["Dentist", "Ophtalmologist", "Generalist", "Surgeon"].sample, zip_code: Faker::Address.zip) # Ajoute des docteurs à la BDD Doctor
+end
+
+8.times do
+  patient = Patient.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+end #Ajoute des patients à la BDD Patient
+
+10.times do
+  apointment = Apointment.create!(date: Faker::Date.between(from: 2.years.ago, to: Date.today), doctor: Doctor.all.sample, patient: Patient.all.sample) #Créer de rdv entre 1 docteur de la BDD Doctor et un patient de la BDD Patient, tirés au hasard
+end
