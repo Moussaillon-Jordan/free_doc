@@ -1,24 +1,13 @@
-# README
+# Free Doc
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+L'application qui va mettre Doctolib en pls
 
-Things you may want to cover:
+Ici on crée les modèles Doctor, Patient et Apointment
 
-* Ruby version
+Doctors et Patients sont reliés via la table Apointment
 
-* System dependencies
+Relation 1-N pour Doctor - Apointment et Patient - Apointment
 
-* Configuration
+Relation N - N pour Doctors et Patients
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Puis on fait une migration pour ajouter la classe City
